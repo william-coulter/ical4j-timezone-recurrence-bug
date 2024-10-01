@@ -4,13 +4,13 @@ This repository contains a minimal example for reproducing what we believe to be
 
 # What bug?
 
-We encounter an incorrect recurrence set when generating recurrences using the `evaluateRecurrenceSet` function. Recurrences generated for a `AEDT` timezone offset (+11:00 GMT) while your local machine is in a `AEST` timezone offset (+10:00 GMT) are shifted an hour later.
+We encounter an incorrect recurrence set when generating recurrences using the `evaluateRecurrenceSet` function. Recurrences generated for a `AEDT` timezone offset (+11:00 GMT) while your system is in a `AEST` timezone offset (+10:00 GMT) are shifted an hour later.
 
 Conditions:
  - Recurrences need to be generated for a period in the `AEDT` timezone offset (+11:00 GMT).
  - Local time needs to be in the `AEST` timezone offset (+10:00 GMT).
 
-Local time is mocked using bash's `date` helper. For example, setting your computer to a `AEST` such as 11:45pm 4th October 2024 can be achieved with:
+Local time is mocked using bash's `date` helper. For example, setting your computer to a `AEST` such as 1:45pm 4th October 2024 can be achieved with:
 
 ```bash
 sudo date 1004134524
@@ -68,7 +68,7 @@ Notice how the timezone offset is now `+11:00` and the `UTC` time produced is `2
 
 # Some additional observations
 
-You might think `ical4j` is only using the timezone offset that it's currently in, and ignoring offset changes. This isn't the as even if your local time is `AEDT` (+11:00) and you generate recurrences for `AEST` (+10:00), they generate correctly.
+You might think `ical4j` is only using the timezone offset that it's currently in, and ignoring offset changes. This isn't the case, as even if your local time is `AEDT` (+11:00) and you generate recurrences for `AEST` (+10:00), they generate correctly.
 
 To reproduce this:
 
@@ -154,4 +154,3 @@ ProductName:		macOS
 ProductVersion:		15.0.1 (Sequoia)
 BuildVersion:		24A348
 ```
-
