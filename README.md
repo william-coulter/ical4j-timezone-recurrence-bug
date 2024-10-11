@@ -4,7 +4,7 @@ This repository contains a minimal example for reproducing what we believe to be
 
 # What bug?
 
-We encounter an incorrect recurrence set when generating recurrences using the `evaluateRecurrenceSet` function. Recurrences generated for a `AEDT` timezone offset (+11:00 GMT) while your system is in a `AEST` timezone offset (+10:00 GMT) are shifted an hour later.
+We encounter an incorrect recurrence set when generating recurrences using the `calculateRecurrenceSet` function. Recurrences generated for a `AEDT` timezone offset (+11:00 GMT) while your system is in a `AEST` timezone offset (+10:00 GMT) are shifted an hour later.
 
 Conditions:
  - Recurrences need to be generated for a period in the `AEDT` timezone offset (+11:00 GMT).
@@ -91,7 +91,7 @@ You can see that the recurrence start was correctly generated at 1st October 2pm
 
 # Our investigation
 
-We've been looking into the `evaluateRecurrenceSet` function and timezone instances from the `TimezoneRegistry`. The timezone has the correct `Observance` for Australia/Sydney daylight savings changes (based on `vTimeZone.getApplicableObservance`).
+We've been looking into the `calculateRecurrenceSet` function and timezone instances from the `TimezoneRegistry`. The timezone has the correct `Observance` for Australia/Sydney daylight savings changes (based on `vTimeZone.getApplicableObservance`).
 
 There is some interesting behaviour with the `TimeZone.getOffset(date: Int)` function:
 
