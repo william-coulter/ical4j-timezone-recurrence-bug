@@ -121,7 +121,9 @@ Here is some information on most of the dependencies
 
 ## ical4j
 
-Version [4.0.3](https://mvnrepository.com/artifact/org.mnode.ical4j/ical4j/4.0.3).
+Version [4.0.4](https://mvnrepository.com/artifact/org.mnode.ical4j/ical4j/4.0.4).
+
+(Also reproduced with `3.2.19`)
 
 ## Maven CLI
 
