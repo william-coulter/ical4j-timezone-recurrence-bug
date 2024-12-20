@@ -57,6 +57,8 @@ Interestingly, the bug **does not occur** when your machine is in the `AEDT` tim
 1. Set local time to `AEDT` (+11:00) e.g with `sudo date 1104134524`.
 2. Run the project (`java -jar target/ical4j-example-1.0-SNAPSHOT.jar`).
 
+Note, you can set your datetime back to the current time on your machine with `sudo sntp -sS time.apple.com`.
+
 Observed output:
 
 ```
